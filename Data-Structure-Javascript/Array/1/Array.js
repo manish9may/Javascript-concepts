@@ -17,6 +17,10 @@ console.log('nums2				',nums2);
 console.log('samenums2				',samenums2);
 
 
-var names = ["David", "Cynthia", "Raymond", "Clayton", "Jennifer"];
-console.log('names         ',names);
-console.log('names.indexOf("Cynthia")       ',names.indexOf('Cynthia'))
+var names1 = ["David", "Cynthia", "Raymond", "Clayton", "Jennifer"];
+console.log('names1         ',names1);
+console.log('names1.indexOf("Cynthia")       ',names1.indexOf('Cynthia'))
+var names2 = ["David", "Cynthia", "Raymond", "Clayton", "Jennifer"];
+console.log('names2.join()                ',names2.join());
+console.log('names2.toString()                ',names2.toString());
+
