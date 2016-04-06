@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app = "angularUiApp" ng-strict-di>
+<head lang="en">
+ 	<title>Angular Javascript</title>
+ 	<meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/common/vendor.css" />
+     <!-- bower:css -->
+     <!-- endbower -->
+</head>
+<body ng-cloak>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<!-- endbower -->
+<!-- endbuild -->
+<!-- HEADER AND NAVBAR -->
+<header>
+	<nav class = "navbar navbar-default">
+		<div class = "container">
+			<div class = "navbar-header">
+				<a href="javscript:void(0);" class = "navbar-brand">Angular Javascript</a>
+			</div>
+		</div>
+	</nav>
+</header> 
+<div class="main">
+	<div ui-view />
+</div>
+<script src="scripts/common/vendor.js"></script>
+<script src="scripts/common/scripts.js"></script>
+<script src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/services/workflowService.js"></script>
+<script type="text/javascript" src="scripts/controllers/commonController.js"></script>
+<script type="text/javascript" src="scripts/controllers/angularUIFormCtrl.js"></script>
+</body>
+</html>

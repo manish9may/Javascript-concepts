@@ -1,0 +1,14 @@
+{
+  "name": "customcheckbox",
+  "main": "customcheckbox.js",
+  "version": "1.4.1",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
