@@ -18,3 +18,5 @@ console.log('samenums2				',samenums2);
 
 
 var names = ["David", "Cynthia", "Raymond", "Clayton", "Jennifer"];
+console.log('names         ',names);
+console.log('names.indexOf("Cynthia")       ',names.indexOf('Cynthia'))
