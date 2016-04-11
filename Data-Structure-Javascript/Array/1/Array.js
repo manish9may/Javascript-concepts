@@ -60,7 +60,9 @@ console.log('nums3				',nums3);
 var isEven = function(number){
 	return number % 2 === 0;
 }
-
+var isOdd = function(number){
+	return number % 2 !== 0;
+}
 var nums4 = [2,4,6,8,10];
 
 var evenNums4 = nums4.every(isEven)
@@ -103,5 +105,26 @@ console.log('sentence1				',sentence1);
 var sentence2 = words.reduceRight(concat);
 
 console.log('sentence2				',sentence2);
+
+var grades = [77, 65, 81, 92, 83];
+
+var curve = function(grade){
+	return grade += 5;
+}
+
+var newGrades = grades.map(curve)
+
+console.log('newGrades				',newGrades);
+
+var first = function(grade){
+	return grade.toString()[0];
+}
+
+var newGrades0 = newGrades.map(first);
+
+console.log('newGrades0				',newGrades0.join(''));
+
+
+
 
 
