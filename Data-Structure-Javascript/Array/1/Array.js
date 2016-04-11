@@ -124,7 +124,33 @@ var newGrades0 = newGrades.map(first);
 
 console.log('newGrades0				',newGrades0.join(''));
 
+var nums6 = [];
+for (var i = 0; i < 20; ++i) {
+nums6[i] = i+1;
+}
 
 
+var evens = nums6.filter(isEven);
+console.log("Even numbers: ");
+console.log(evens);
+var odds = nums6.filter(isOdd);
+console.log("Odd numbers: ");
+console.log(odds);
 
+
+var grades2 = [];
+for (var i = 0; i < 20; ++i) {
+	grades2[i] = Math.floor(Math.random() * 101);
+}
+
+
+var passing = function(number){
+	return number >= 60;
+}
+
+var passGrades = grades2.filter(passing);
+console.log("All grades: ");
+console.log(grades2);
+console.log("Passing grades: ");
+console.log(passGrades);
 
