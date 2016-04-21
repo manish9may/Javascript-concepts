@@ -5,7 +5,8 @@ var List = function(){
 }
 List.prototype = {
 	append : function($element){
-		this.$dataStore[this.$listSize++] = $element;
+		Array.prototype.splice.call(this.$dataStore,this.$listSize,0,$element);
+		++this.$listSize;
 	},
 	find : function($element){
 		/*Array.prototype.forEach.call(this.dataStore,function(element,index){
@@ -30,8 +31,10 @@ List.prototype = {
 		return this.$dataStore.toString();
 	},
 	clear : function(){
-		Array.prototype.splice.call(this.$dataStore,0,this.$listSize);
+		var listSize = this.$listSize;
 		this.$listSize = 0;
+		return Array.prototype.splice.call(this.$dataStore,0,listSize);
+		
 	},
 	insertAfter : function($element,$afterElement){
 		var $itemIndex = this.find($afterElement);
@@ -101,3 +104,6 @@ console.log('\n################## Front Loop #################\n')
 for(names.front();names.currentPosition() < names.length() ; names.next()){
 	console.log('names.getElement('+names.currentPosition()+')				',names.getElement(),'\n');
 }
+
+console.log('names.clear()				',names.clear(),'\n')
+console.log('List.toString()			',names.toString(),'\n');
