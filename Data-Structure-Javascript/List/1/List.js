@@ -1,10 +1,10 @@
 var List = function(){
 	this.$dataStore = [];
-	this.$size = 0;
+	this.$listSize = 0;
 }
 List.prototype = {
 	append : function($element){
-		this.$dataStore[this.$size++] = $element;
+		this.$dataStore[this.$listSize++] = $element;
 	},
 	find : function($element){
 		/*Array.prototype.forEach.call(this.dataStore,function(element,index){
@@ -23,20 +23,20 @@ List.prototype = {
 		throw new Error('Not Found!');
 	},
 	length : function(){
-		return this.$size;
+		return this.$listSize;
 	},
 	toString : function(){
 		return this.$dataStore.toString();
 	},
 	clear : function(){
-		Array.prototype.splice.call(this.$dataStore,0,this.$size);
+		Array.prototype.splice.call(this.$dataStore,0,this.$listSize);
 		this.size = 0;
 	},
 	insertAfter : function($element,$afterElement){
 		var $itemIndex = this.find($afterElement);
 		if($itemIndex > -1){
 			Array.prototype.splice.call(this.$dataStore,$itemIndex + 1,0,$element);
-			return this.$size++;
+			return this.$listSize++;
 		}else{
 			throw new Error('Not Found!');		
 		}
