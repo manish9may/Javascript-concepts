@@ -1,6 +1,7 @@
 var List = function(){
 	this.$dataStore = [];
 	this.$listSize = 0;
+	this.$position = 0;
 }
 List.prototype = {
 	append : function($element){
@@ -17,7 +18,7 @@ List.prototype = {
 	remove : function($element){
 		var $itemIndex = this.find($element);
 		if($itemIndex > -1){
-			this.size -- ;
+			this.$listSize -- ;
 			return Array.prototype.splice.call(this.$dataStore,$itemIndex,1);
 		}
 		throw new Error('Not Found!');
@@ -30,7 +31,7 @@ List.prototype = {
 	},
 	clear : function(){
 		Array.prototype.splice.call(this.$dataStore,0,this.$listSize);
-		this.size = 0;
+		this.$listSize = 0;
 	},
 	insertAfter : function($element,$afterElement){
 		var $itemIndex = this.find($afterElement);
@@ -40,6 +41,33 @@ List.prototype = {
 		}else{
 			throw new Error('Not Found!');		
 		}
+	},
+	front : function(){
+		this.$position = 0;
+	},
+	end : function(){
+		this.$position = this.$listSize - 1;
+	},
+	next : function(){
+		if(this.$position < this.$listSize){
+				++this.$position;
+		}
+	},
+	previous : function(){
+		if(this.$position >= 0){
+			--this.$position;
+		}
+	},
+	currentPosition : function(){
+		return this.$position;
+	},
+	moveToPosition : function(position){
+		if(position < this.$listSize){
+			this.$position = position;
+		}
+	},
+	getElement : function(){
+		return this.$dataStore[this.$position];
 	}
 };
 
@@ -60,3 +88,16 @@ console.log('List.toString()			',names.toString(),'\n');
 console.log('List.remove()			',names.remove("Bryan"));
 
 console.log('List.toString()			',names.toString(),'\n');
+
+names.front();
+console.log('names.getElement()				',names.getElement(),'\n');
+
+
+console.log('\n################## Reverse Loop #################\n')
+for(names.end();names.currentPosition() >= 0 ; names.previous()){
+	console.log('names.getElement('+names.currentPosition()+')				',names.getElement(),'\n');
+}
+console.log('\n################## Front Loop #################\n')
+for(names.front();names.currentPosition() < names.length() ; names.next()){
+	console.log('names.getElement('+names.currentPosition()+')				',names.getElement(),'\n');
+}
