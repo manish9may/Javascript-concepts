@@ -122,3 +122,53 @@ console.log('isPalindromWithStack(\'abc\')				',isPalindromWithStack('abc'))
 
 
 
+console.log('\n######## Factorial Without Stack #############\n')
+
+var Factorial = function(number){
+	if(typeof number === 'number' && number > -1){
+		if(number === 0){
+			return 1;
+		}else{
+			return number * Factorial(number - 1);
+		}
+	}else{
+	 	throw new Error('Invalid Operation!');
+	}
+}
+
+console.log('Factorial(6)			',Factorial(6));
+try{
+	console.log('Factorial(\'6\')			',Factorial('6'));
+}catch(error){
+	console.log('Error 					',error.message,'   Operation    Factorial(\'6\')')
+}
+
+
+console.log('\n######## Factorial With Stack #############\n')
+
+
+var FactorialWithStack = function(number){
+	if(typeof number === 'number' && number > -1){
+		var s = new Stack();
+		while(number > 0){
+			s.push(number);
+			number = number - 1;
+		}
+		var returnNum = 1;
+		while(s.length()){
+			returnNum *= s.pop();
+		}
+		return returnNum;
+	}else{
+	 	throw new Error('Invalid Operation!');
+	}
+}
+
+
+console.log('FactorialWithStack(6)			',FactorialWithStack(6));
+console.log('FactorialWithStack(0)			',FactorialWithStack(0));
+try{
+	console.log('FactorialWithStack(\'6\')			',FactorialWithStack('6'));
+}catch(error){
+	console.log('Error 					',error.message,'   Operation    FactorialWithStack(\'6\')')
+}
