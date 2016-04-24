@@ -63,3 +63,62 @@ console.log('stack.peek()		',stack.peek());
 console.log('\n######## Stack #############\n')
 console.log('stack.toString()				',stack.toString(),'\n');
 console.log('\n######## Stack #############\n')
+console.log('\n######## Convert Base #############\n')
+var convertBase = function(number,base){
+	var s = new Stack();
+	do {
+		s.push(number % base);
+		number = Math.floor(number /= base)
+	}while(number > 0)
+	var returnNum = '';
+	while(s.length()){
+		returnNum += s.pop();
+	}
+	return parseInt(returnNum,10)
+}
+console.log('convertBase(9,2)			',convertBase(9,2))
+
+
+console.log('\n######## Palindrom Without Stack #############\n')
+
+var isPalindrom = function(words){
+	if(words && typeof words !== 'undefined'){
+		var wordsArray = words.toString().split('');
+		var wordsStoreArray = wordsArray;
+		var reverseWord = Array.prototype.reverse.call(wordsArray).join('');
+		return reverseWord == words;
+	}
+	return false;
+	
+}
+
+console.log('isPalindrom(121)				',isPalindrom(121))
+console.log('isPalindrom(\'aba\')				',isPalindrom('aba'))
+
+
+
+console.log('\n######## Palindrom With Stack #############\n')
+
+var isPalindromWithStack = function(words){
+	if(words && typeof words !== 'undefined'){
+		var s = new Stack()
+		var wordsArray = words.toString().split('');
+		Array.prototype.forEach.call(wordsArray,function(value,index){
+			s.push(value);
+		});
+		var reverseWord = '';
+		while(s.length()){
+			reverseWord += s.pop();
+		}
+
+		return reverseWord == words;
+	}
+
+	return false;
+}
+
+console.log('isPalindromWithStack(121)				',isPalindromWithStack(121))
+console.log('isPalindromWithStack(\'abc\')				',isPalindromWithStack('abc'))
+
+
+
