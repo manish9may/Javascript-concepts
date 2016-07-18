@@ -1,0 +1,14 @@
+{
+  "name": "jquery.numeric",
+  "main": "jquery.numeric.js",
+  "version": "1.4.2",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

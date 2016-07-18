@@ -310,7 +310,7 @@ angular.module('angularBaseUiApp')
 }]);
   'use strict';
 
-angular.module('angularBaseUiApp')
+aangular.module('angularBaseUiApp')
 .directive('angularDatePicker', ['templateURL', function(templateURL) {
   return {
     controller : ['$scope','$timeout','$element',function($scope,$timeout,$element){
@@ -320,9 +320,10 @@ angular.module('angularBaseUiApp')
         dateFormat: "dd/mm/yy"
       };
       var _imageOptions = {
-          buttonImageOnly : true,
-          showOn : 'button',
-          buttonText : 'Select Date'
+         inline : true,
+         showOn: 'focus',
+         showButtonPanel: true,
+         closeText: 'Clear'
       }
       $timeout(function(){
         options = angular.extend(options, $scope.dateOptions);
@@ -344,7 +345,7 @@ angular.module('angularBaseUiApp')
       disabled : '=ngDisabled',
       dateOptions : '=angularDateOptions'
     },
-  	compile : function($element,$attrs){
+    compile : function($element,$attrs){
             return {
                 post : function(scope,element,attrs,controllers){
                     var ngModelCtrl = controllers[0],
@@ -357,6 +358,12 @@ angular.module('angularBaseUiApp')
                           changeMonth : true,
                           onSelect : function(dateText){
                                 updateModal(dateText);
+                          },
+                         onClose: function (dateText) {
+                                if ($(window.event.srcElement).hasClass('ui-datepicker-close')) {
+                                  $(this).val('');
+                                  updateModal(null);
+                                }
                           }
                         };
                     angularDatePickerCtrl.initDatePicker(mandatoryOptions);
