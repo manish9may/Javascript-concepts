@@ -785,7 +785,6 @@ LinkedList.prototype = {
             headB = headB.next;
             lenB--;
         }
-
         while(headA && headB){
             if(headA.data === headB.data){
                 return headA.data;
@@ -800,16 +799,18 @@ LinkedList.prototype = {
 var linkedList = new LinkedList(),linkedList2 = new LinkedList();
 linkedList.add('1')
 linkedList.add('2')
-linkedList.add('1')
+linkedList.add('8')
 linkedList.add('4')
 linkedList.add('5')
 
 
 linkedList2.add('9')
-linkedList2.add('8')
+linkedList2.add('14')
 linkedList2.add('7')
-linkedList2.add('4')
+linkedList2.add('24')
 linkedList2.add('6')
+linkedList2.add('4')
+linkedList2.add('12')
 
 
 console.log(linkedList.getIntersectionNode(linkedList.head,linkedList2.head))
