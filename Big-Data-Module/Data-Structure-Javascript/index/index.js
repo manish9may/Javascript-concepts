@@ -712,7 +712,7 @@ console.log("areParenthesisBalanced('{()}[]')		",areParenthesisBalanced('{()}[]'
 
 var binaryIndexOf = function(items,searchElement){
 	items = items.sort(function(a,b){return a - b;});
-	var minIndex = 0,maxIndex = items.length - 1,currentIndex = 0,currentElement = null;
+	var minIndex = 0,maxIndex = items.length,currentIndex = 0,currentElement = null;
 	while(minIndex <= maxIndex){
 		currentIndex = Math.floor((minIndex + maxIndex)/2);
 		currentElement = items[currentElement];
