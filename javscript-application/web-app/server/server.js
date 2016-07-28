@@ -5,15 +5,15 @@ var express = require('express'),
     errorhandler = require('errorhandler'),
     csrf = require('csurf'),
     routes = require('./routes'),
-    services = require('./routes/routes'),
-    multer  = require('multer'),
+    /*services = require('./routes/routes'),
+    multer  = require('multer'),*/
     app = express();
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
 app.use(session({
-    secret: 'angular-javascript',
+    secret: 'javascript-web-application',
     saveUninitialized: true,
     resave: true }));
 app.use(cookieParser());
@@ -27,7 +27,7 @@ app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
 // parse an HTML body into a string 
 app.use(bodyParser.text({ type: 'text/html' }))
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/../'));
+//app.use(express.static(__dirname + '/../'));
 app.use(errorhandler());
 app.use(csrf());
 
@@ -40,11 +40,7 @@ app.use(function (req, res, next) {
 });
 
 app.get('/', routes.index);
-var baseUrl = '/api/services';
-app.use(baseUrl , services);
-app.get('*', routes.index);
-
 
 app.listen(8085, function () {
-    console.log("Angular Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+    console.log("Node Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });

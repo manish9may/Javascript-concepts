@@ -4,7 +4,7 @@
 echo "# Javascript-concepts" >> README.md
 git init
 git add README.md
-git commit -m "first commit"
+git commit -m "`date`"
 git remote add origin https://github.com/manish9may/Javascript-concepts.git
 git push -u origin master
 
