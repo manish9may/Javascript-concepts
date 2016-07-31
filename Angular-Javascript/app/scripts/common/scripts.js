@@ -310,7 +310,7 @@ angular.module('angularBaseUiApp')
 }]);
   'use strict';
 
-aangular.module('angularBaseUiApp')
+angular.module('angularBaseUiApp')
 .directive('angularDatePicker', ['templateURL', function(templateURL) {
   return {
     controller : ['$scope','$timeout','$element',function($scope,$timeout,$element){

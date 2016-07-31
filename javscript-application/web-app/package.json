@@ -55,7 +55,8 @@
     "grunt-html-build" : "^0.5.3",
     "formidable" : "1.0.17",
     "multiparty" : "4.1.2",
-    "multer" : "1.1.0"
+    "multer" : "1.1.0",
+    "grunt-include-source" : "1.0.0"
 
   },
   "engines": {

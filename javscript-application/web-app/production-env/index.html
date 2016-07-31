@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app = "commonApp" ng-strict-di>
+<head lang="en">
+ 	<title>{{'label.layout.application.title' | translate }}</title>
+ 	<meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- bower:css -->
+    <!-- endbower -->
+    <link href="production-env/min/css/common/vendor.css" rel="stylesheet" type="text/css">
+    <link href="production-env/min/css/common/base.css" rel="stylesheet" type="text/css">
+</head>
+<body ng-cloak class = "jsWrapper">
+  <div class = "main" ng-contoller = "navigationController">
+	<header>
+	<nav class = "navbar navbar-default">
+		<div class="container">
+        <div class="navbar-header">
+                  <a class="navbar-brand" href="#">{{'label.layout.application.title' | translate }}</a>
+        </div>
+        <!-- https://getbootstrap.com/examples/navbar-fixed-top/ -->
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">{{'label.layout.application.nav.home.title' | translate }}</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{'label.layout.application.nav.algo.title' | translate }}<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">{{'label.layout.application.nav.layout.sub.title1' | translate }}</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">{{'label.layout.application.nav.layout.sub.title2' | translate }}</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+	</nav>
+</header>
+<div class="main">
+	<div ui-view />
+</div>
+  <!-- bower:js -- class = "jsWrapper">
+  <!- ng-contoller = "navigationController"- endbower -->
+  <script src="production-env/min/messages/messages.js"></script>
+  <script src="production-env/min/scripts/common/vendor.js"></script>
+  <script src="production-env/min/scripts/common/application.js"></script>
+  <footer class="footer">
+      <div class="container">
+        <p class="text-muted" ng-bind-html = "'label.layout.application.footer.title' | translate"></p>
+      </div>
+  </footer>
+</div>
+</body>
+</html>

@@ -27,7 +27,7 @@ app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
 // parse an HTML body into a string 
 app.use(bodyParser.text({ type: 'text/html' }))
 app.use(bodyParser.json());
-//app.use(express.static(__dirname + '/../'));
+app.use(express.static(__dirname+'/../'));
 app.use(errorhandler());
 app.use(csrf());
 
@@ -40,6 +40,7 @@ app.use(function (req, res, next) {
 });
 
 app.get('/', routes.index);
+app.get('*', routes.index);
 
 app.listen(8085, function () {
     console.log("Node Express server listening on port %d in %s mode", this.address().port, app.settings.env);

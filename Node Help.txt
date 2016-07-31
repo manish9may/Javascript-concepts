@@ -1,0 +1,6 @@
+-- delete node_modules
+
+npm install rimraf -g
+
+rimraf node_modules
+
