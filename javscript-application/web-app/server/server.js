@@ -5,8 +5,7 @@ var express = require('express'),
     errorhandler = require('errorhandler'),
     csrf = require('csurf'),
     routes = require('./routes'),
-    /*services = require('./routes/routes'),
-    multer  = require('multer'),*/
+    services = require('./routes/routes'),
     app = express();
 
 app.set('views', __dirname + '/views');
@@ -40,7 +39,16 @@ app.use(function (req, res, next) {
 });
 
 app.get('/', routes.index);
+var baseUrl = '/api/services';
+app.use(baseUrl , services);
+app.use(function(err, req, res, next){
+    console.error(err.stack);
+    res.status(500);
+    res.send('error', { error: err });
+});
 app.get('*', routes.index);
+
+
 
 app.listen(8085, function () {
     console.log("Node Express server listening on port %d in %s mode", this.address().port, app.settings.env);

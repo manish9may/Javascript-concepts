@@ -9,9 +9,14 @@ angular
     })
     .config(['$httpProvider', '$translateProvider','routesProvider', function($httpProvider, $translateProvider,routesProvider) {
     	 $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+         $httpProvider.interceptors.push('httpInterceptor');
     	 $translateProvider.translations(locale,messages);
 		 $translateProvider.preferredLanguage(locale);
     }])
     .value('dateFormat', 'MM/DD/YYYY').run(function() {
 
-    });
+    })
+    .run(['$rootScope', '$location', '$http', 'workflowConfig','$uibModalStack','$uibModal','$stateParams', '$anchorScroll','$state','$timeout',function($rootScope, $location,
+        $http, config,$uibModalStack,$uibModal,$stateParams,$anchorScroll,$state,$timeout) {    
+    }
+    ]);

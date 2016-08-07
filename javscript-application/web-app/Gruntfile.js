@@ -79,7 +79,8 @@ module.exports = function(grunt) {
                 },{
                     dest: 'production-env/min/scripts/common/application.js',
                     src: ['development-env/scripts/baseApp/app.js',
-                            'development-env/scripts/baseApp/providers/routes.js',
+                           'development-env/scripts/baseApp/factory/HttpInterceptor.js',
+                           'development-env/scripts/baseApp/providers/routes.js',                         
                            'development-env/scripts/baseApp/controllers/NavigationController.js',
                            'development-env/scripts/commonApp/app.js',
                            'development-env/scripts/commonApp/controllers/CommonWorkflowController.js']
