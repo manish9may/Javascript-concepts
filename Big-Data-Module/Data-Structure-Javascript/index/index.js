@@ -730,3 +730,18 @@ var binaryIndexOf = function(items,searchElement){
 
 console.log('binaryIndexOf(3)			',binaryIndexOf([2,7,3,5,1,34],3))
 
+var module = {
+	a : 'abc',
+	b : function(){
+		var self = this;
+		console.log(this.a);
+		console.log(self.a);
+		return function(){
+			console.log(this.a);
+			console.log(self.a);
+		}
+	}
+
+}
+
+module.b()();

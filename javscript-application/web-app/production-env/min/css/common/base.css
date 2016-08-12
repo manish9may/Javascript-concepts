@@ -200,7 +200,7 @@ th {
 .container .text-muted {
     margin: 20px 0;
 }
-.homeWrapper div.row{
+.homeWrapper div.row,.prototypeWrapper div.row,.moduleWrapper div.row{
   margin: 0px;
 }
 .homeWrapper div:nth-child(2) div:nth-child(odd){
@@ -227,4 +227,17 @@ th {
 
 .marginL10{
   margin-left: 10px !important;
+}
+
+.prototypeWrapper .btn,.moduleWrapper .btn {
+    width: 24.3%;
+    margin: 0 5px 5px 0;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.prototypeWrapper .calcs,.moduleWrapper .calcs{
+    height: 42px;
+    font-size: 30px;
+    line-height: 35px;
 }

@@ -20,6 +20,12 @@ angular.module('baseApp')
 					return '/production-env/views/design-patterns/pototype-pattern.html'
 			}
 		});
+		$stateProvider.state('designPatterns.modulePattern', {
+			url : '/modulePattern',
+			templateUrl: function($stateParams) {
+					return '/production-env/views/design-patterns/module-pattern.html'
+			}
+		});
 		$urlRouterProvider.otherwise('/workflow/section/home');
 		this.$get = function(){
 			return {};

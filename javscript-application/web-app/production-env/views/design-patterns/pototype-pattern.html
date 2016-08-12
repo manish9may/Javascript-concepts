@@ -1,7 +1,125 @@
-<div class="container prototypeWrapper">
+<div class="container prototypeWrapper" ng-controller = "prototypeCtrl as ctrl">
       <div class="page-header">
         <h1>{{'label.layout.application.nav.algo.sub.title1' | translate}}</h1>
       </div>
-      <div class = "row">
+      <div class="row">
+      		<div class = "col-xs-8">
+        		<input id="{{ctrl.info.id}}" class="text-right form-control calcs" type="text" name="input" size="16" readonly = "readonly">
+        	</div>
+      </div>
+      <div class="row marginT10">
+      	<div class="col-xs-8">
+	      	<a class="btn btn-danger col-xs-2" ng-click="ctrl.calculator.setEquationCtrl('ac');">{{'label.layout.calc.AC' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl('log');">{{'label.layout.calc.log' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl('sin');">{{'label.layout.calc.sin' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl('tan');">{{'label.layout.calc.tan' | translate}}</a>
+    	</div>
+      </div>
+       <div class="row">
+       	<div class="col-xs-8">
+	      	<a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl(7);">{{'label.layout.calc.7' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl(8);">{{'label.layout.calc.8' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl(9);">{{'label.layout.calc.9' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl('*');">{{'label.layout.calc.*' | translate}}</a>
+          
+	     </div>
+      </div>
+       <div class="row">
+       	<div class="col-xs-8">
+	      	<a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl(4);">{{'label.layout.calc.4' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl(5);">{{'label.layout.calc.5' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl(6);">{{'label.layout.calc.6' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl('-');">{{'label.layout.calc.-' | translate}}</a>
+          
+        </div>
+      </div>
+      <div class="row">
+      	<div class="col-xs-8">
+	      	<a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl(1);">{{'label.layout.calc.1' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl(2);">{{'label.layout.calc.2' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl(3);">{{'label.layout.calc.3' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl('+');">{{'label.layout.calc.+' | translate}}</a>
+          
+	     </div>
+      </div>
+      <div class="row">
+      	<div class="col-xs-8">
+	      	<a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl(0);">{{'label.layout.calc.0' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl('.');">{{'label.layout.calc..' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.engine.exec(ctrl.calculator);">{{'label.layout.calc.=' | translate}}</a>
+	        <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl('/');">{{'label.layout.calc./' | translate}}</a>
+	    </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+            <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl('(');">{{'label.layout.calc.(' | translate}}</a>
+            <a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl(')');">{{'label.layout.calc.)' | translate}}</a>
+            <!--<a class="btn btn-primary col-xs-2" ng-click="ctrl.calculator.setEquationCtrl('%');">{{'label.layout.calc.%' | translate}}</a>-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <pre>
+angular.module("commonApp")
+  .controller("prototypeCtrl", ['$http', '$stateParams', '$scope', '$rootScope','$location','workflowConfig', '$state',
+      function($http, $stateParams, $scope, $rootScope, $location, config, $state){
+        var vm = this;
+        vm.info = {
+          id : 'equationCtrl'
+        };
+        var Calculator = function(eqCtrlId){
+          this.equationCtrl = document.getElementById(eqCtrlId);
+          this.resultsValue = 0;
+        };
+        Calculator.prototype = {
+          setEquationCtrl : function(cmd){
+            if(cmd === 'ac'){
+              this.equationCtrl.value = '';
+              return;
+            }
+            switch(cmd){
+              case 'sin':
+              this.equationCtrl.value += cmd + '(';
+              break;
+              case 'tan':
+              this.equationCtrl.value += cmd + '(';
+              break;
+              case 'log':
+              this.equationCtrl.value += cmd + '(';
+              break;
+              default :
+              this.equationCtrl.value += cmd;
+            }
+            
+          },
+          engine : {
+            exec : function(ctrl){
+              try{
+                ctrl.equationCtrl.value = eval(this.parse(ctrl.equationCtrl.value));
+              }catch(e){
+                return e;
+              }
+            },
+            parse : function(value){
+              if(value){
+                value = this.replaceFun(value,'sin','Math.sin');
+                value = this.replaceFun(value,'log','Math.log');
+                value = this.replaceFun(value,'tan','Math.tan');
+                return value;
+              }
+              return 0;
+            },
+            replaceFun : function(value,regex,fun){
+              return value.replace(new RegExp(regex,'g'),fun);
+            }
+          }
+        }
+        setTimeout(function(){
+          vm.calculator = new Calculator(vm.info.id); 
+        })
+        
+ }]);
+          </pre>
+        </div>
       </div>
 </div>
