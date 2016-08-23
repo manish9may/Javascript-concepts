@@ -1,0 +1,42 @@
+<section class="game-wrapper">
+	<div class="params">
+		<div class="grid-size-wrapper">
+			<label>{{'lable.index.page.grid.size' | translate}}</label>
+			<input type="number" ng-model="ctrl.page.data.gridSize" class="grid-size">
+		</div>
+		<div class="n-wrapper">
+			<label>{{'lable.index.page.numbrer.of.cell.you.will.uncolored' | translate}}</label>
+			<input type="number" ng-model="ctrl.page.data.uncolored" class="n">
+		</div>
+		<div class="chances-wrapper">
+			<label>{{'lable.index.page.how.many.chance' | translate}}</label>
+			<input type="number" ng-model="ctrl.page.data.chances" class="chances">
+		</div>
+	</div>
+	<div class="time-claim-wrapper">
+		<label>{{'lable.index.page.how.many.secnd.will.you.take' | translate}}</label>
+		<input type="number" ng-model="ctrl.page.data.claim" class="time-claim">
+	</div>
+	<div class="countdown-label">{{'lable.index.page.countdown' | translate}}</div>
+	<div class="countdown-wrapper">
+		<div class="time-ss">{{ctrl.Math.floor(ctrl.page.data.timeSpend/1000)}}</div>
+	</div>
+	<div class="grid-wrapper marginB10">
+			<div ng-repeat="row in [] | range:ctrl.page.data.gridSize" class="cell-row" ng-style="ctrl.getRowStyle($index)">
+				<div ng-repeat="col in [] | range:ctrl.page.data.gridSize" class="cell" ng-style="ctrl.getCellStyle($index, $parent.$index)" ng-click="ctrl.discard($index, $parent.$index)"></div>
+			</div>
+	</div>
+	<div class="success-message" ng-show="ctrl.page.data.success">
+		<div>You completed the game with <span ng-show="ctrl.Math.floor(ctrl.page.data.timeSpend/1000)">{{ctrl.Math.floor(ctrl.page.data.timeSpend/1000)}}s and</span> Congrats! You won the game!</div>
+		<div class="close-btn-wrapper"><button class="btn" ng-click="ctrl.page.data.success = null; ctrl.reset();">Close</button></div>
+	</div>
+	<div class="failure-message" ng-show="ctrl.page.data.failure">
+		<pre>Oh no..! you did not make it..!</pre>
+		<pre ng-show="ctrl.page.data.chances == 0">You lost the game!</pre>
+		<pre ng-show="ctrl.page.data.chances > 0">You can try {{ctrl.page.data.chances || 'no'}} more time<span ng-show="ctrl.page.data.chances > 1">s</span></pre>
+		<div class="failure-close-btn-wrapper">
+			<!-- <button class="btn" ng-click="rechance()" ng-show="chances" ng-disabled="chances==0">Retry</button> -->
+			<button class="btn" ng-click="ctrl.page.data.failure=null; ctrl.reset();">Close</button>
+		</div>
+	</div>
+</section>

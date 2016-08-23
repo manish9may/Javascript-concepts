@@ -1,0 +1,156 @@
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+body.cellGameWrapper {
+    background-color: #6f4646;
+    color: #FFFFFF;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.cellGameWrapper .params {
+    width: 550px;
+    margin: 10px auto;
+}
+.cellGameWrapper .params > div {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+.cellGameWrapper .time-claim-wrapper {
+    width: 300px;
+    margin: auto;
+    ;
+}
+.cellGameWrapper .grid-size,
+.cellGameWrapper .n,
+.cellGameWrapper .chances,
+.cellGameWrapper .time-claim {
+    width: 50px;
+    height: 30px;
+    border-radius: 3px;
+    border: none;
+    text-align: center;
+}
+.cellGameWrapper .grid-wrapper {
+    overflow: hidden;
+    margin-top: 5px;
+}
+.cellGameWrapper .cell {
+    float: left;
+    width: 74px;
+    height: 74px;
+    border-right: 1px solid #777777;
+    border-bottom: 1px solid #777777;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+.cellGameWrapper .cell-row {
+    clear: both;
+    margin: auto;
+}
+.cellGameWrapper .countdown-label {
+    text-align: center;
+}
+.cellGameWrapper .countdown-wrapper {
+    width: 70px;
+    margin: auto;
+}
+.cellGameWrapper .countdown-wrapper > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+.cellGameWrapper .time-ss {
+    overflow: hidden;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    margin: 2px;
+    padding-top: 5px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-radius: 3px;
+}
+.cellGameWrapper .success-message,
+.cellGameWrapper .failure-message {
+    width: 500px;
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*margin: 20px auto;*/
+    
+    margin: -50px 0 0 -250px;
+    color: #FFFFFF;
+    background-color: #333333;
+    border: 2px solid #FFFFFF;
+    text-align: center;
+}
+.cellGameWrapper .success-message {
+    height: 80px;
+}
+.cellGameWrapper .failure-message {
+    height: 100px;
+}
+.cellGameWrapper .close-btn-wrapper {
+    width: 100px;
+    margin: 10px auto;
+}
+.cellGameWrapper .failure-close-btn-wrapper {
+    width: 220px;
+    margin: 10px auto;
+}
+.cellGameWrapper .btn {
+    border: none;
+    background-color: #FFFFFF;
+    color: #333333;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.marginT10{
+  margin-top: 10px !important;
+}
+
+.marginB10{
+  margin-bottom: 10px !important;
+}
+
+.marginR10{
+  margin-right: 10px !important;
+}
+
+.marginL10{
+  margin-left: 10px !important;
+}
