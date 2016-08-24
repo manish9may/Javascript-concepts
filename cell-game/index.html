@@ -10,13 +10,16 @@
 	</head>
 	<body ng-cloak class = "cellGameWrapper">
 		<div ui-view />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/1.1.1/angular-translate.min.js"></script>
+		<script src="lib/angular.min.js"></script>
+		<script src="lib/angular-ui-router.min.js"></script>
+		<script src="lib/angular-animate.min.js"></script>
+		<script src="lib/angular-translate.min.js"></script>
 		<script type="text/javascript" src = 'scripts/app.js'></script>
 		<script type="text/javascript" src = 'scripts/providers/routes.js'></script>
 		<script type="text/javascript" src = 'scripts/filters/rangeFilter.js'></script>
 		<script type="text/javascript" src = 'scripts/controllers/commonController.js'></script>
 	</body>
+	<script type="text/ng-template" id = "home.html">
+		<div ng-include="'views/home.html'"></div>
+	</script>
 </html>
