@@ -10,4 +10,8 @@ git push -u origin master
 
 
 git remote add origin https://github.com/manish9may/Javascript-concepts.git
-git push -u origin master
+git push -u origin 
+
+
+Add a new remote for your branch :
+$ git remote add [name_of_your_remote] 

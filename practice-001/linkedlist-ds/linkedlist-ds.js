@@ -164,7 +164,7 @@ LinkedList.prototype = {
 	}
 
 }
-
+console.log2('######### Linked List #######')
 var linkedList = new LinkedList(),linkedList2 = new LinkedList(),linkedList3 = new LinkedList();
 linkedList.add('2')
 linkedList.add('3')
@@ -188,8 +188,8 @@ linkedList3.add(3);
 linkedList3.add(4);
 linkedList3.add(5);
 
-console.log('linkedList   		',linkedList);
-console.log('linkedList.find("2")   		',linkedList.find("2"));
+console.log2('linkedList   		',linkedList);
+console.log2('linkedList.find("2")   		',linkedList.find("2"));
 //console.log('linkedList.remove("5")   		',linkedList.remove("5"));
 //console.log('linkedList.remove("6")   		',linkedList.remove("6"));
 
@@ -197,4 +197,4 @@ console.log('linkedList.find("2")   		',linkedList.find("2"));
 //console.log('linkedList.isPalindrome()   		',linkedList.isPalindrome());
 //console.log('linkedList.getLen()   		',linkedList.getLen(linkedList.head));
 //console.log('linkedList.getIntersectionNode()   		',linkedList.getIntersectionNode(linkedList.head,linkedList2.head));
-console.log('linkedList.oddEvenList()   		',linkedList.oddEvenList(linkedList3.head));
+console.log2('linkedList.oddEvenList()   		',linkedList.oddEvenList(linkedList3.head));
