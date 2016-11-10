@@ -1,0 +1,105 @@
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-0">
+      <div>
+        <div>
+          <div class="panel panel-default">
+             <div class="panel-body">
+               <h4 class="text-center">AngularJS Filter - Ordinal Numbers</h4>
+               <p><strong>Original:</strong></p>
+               <ul class="list">
+                 <li>{{customfiltersCtrl.page.data.example1}}</li>
+                 <li>{{customfiltersCtrl.page.data.example2}}</li>
+                 <li>{{customfiltersCtrl.page.data.example3}}</li>
+                 <li>{{customfiltersCtrl.page.data.example4}}</li>
+                 <li>{{customfiltersCtrl.page.data.example5}}</li>
+                 <li>{{customfiltersCtrl.page.data.example6}}</li>
+                 <li>{{customfiltersCtrl.page.data.example7}}</li>
+                 <li>{{customfiltersCtrl.page.data.example8}}</li>
+               </ul>
+               <p><strong>Ordinal Filter:</strong></p>
+               <ul class="list">
+                 <li>{{customfiltersCtrl.page.data.example1 | ordinal}}</li>
+                 <li>{{customfiltersCtrl.page.data.example2 | ordinal}}</li>
+                 <li>{{customfiltersCtrl.page.data.example3 | ordinal}}</li>
+                 <li>{{customfiltersCtrl.page.data.example4 | ordinal}}</li>
+                 <li>{{customfiltersCtrl.page.data.example5 | ordinal}}</li>
+                 <li>{{customfiltersCtrl.page.data.example6 | ordinal}}</li>
+                 <li>{{customfiltersCtrl.page.data.example7 | ordinal}}</li>
+                 <li>{{customfiltersCtrl.page.data.example8 | ordinal}}</li>
+               </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-lg-offset-0">
+      <div>
+        <div>
+          <div class="panel panel-default">
+             <div class="panel-body">
+               <h4 class="text-center">AngularJS Filter - Capitalize</h4>
+               <p><strong>Original:</strong></p>
+               <ul class="list">
+                 <li>{{customfiltersCtrl.page.data.capitalizeExample1}}</li>
+                 <li>{{customfiltersCtrl.page.data.capitalizeExample2}}</li>
+               </ul>
+               <p><strong>Capitalize Filter:</strong></p>
+               <ul class="list">
+                 <li>{{customfiltersCtrl.page.data.capitalizeExample1 | capitalize}} - Default - Capitalizes the first letter</li>
+                 <li>{{customfiltersCtrl.page.data.capitalizeExample1 | capitalize:5}} - Capitalizes the 5th letter</li>
+                 <li>{{customfiltersCtrl.page.data.capitalizeExample1 | capitalize:14}} - Out of bounds, nothing gets capitalized</li>
+                 <li>{{customfiltersCtrl.page.data.capitalizeExample2 | capitalize}} - Default - If first, letter is capital, does nothing</li>
+                 <li>{{customfiltersCtrl.page.data.capitalizeExample2 | capitalize:17}} - Capitalizes the 17th letter</li>
+               </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-0">
+      <div>
+        <div>
+          <div class="panel panel-default">
+             <div class="panel-body">
+               <h4 class="text-center">AngularJS Filter - Static Languages</h4>
+               <p><strong>Original:</strong></p>
+               <ul class="list">
+                 <li ng-repeat="lang in customfiltersCtrl.page.data.languageExample">{{lang.name}}</li>
+               </ul>
+               <p><strong>Static Language Filter:</strong></p>
+               <ul class="list">
+                 <li ng-repeat="lang in customfiltersCtrl.page.data.languageExample | staticLanguage">{{lang.name}}</li>
+               </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-lg-6 col-lg-offset-0">
+<div>
+<div>
+  <div class="panel panel-default">
+     <div class="panel-body">
+       <h4 class="text-center">AngularJS Filter - Custom Currency</h4>
+       <p><strong>Original:</strong></p>
+       <ul class="list">
+         <li>{{customfiltersCtrl.page.data.customCurrencyExample}}</li>
+       </ul>
+       <p><strong>Custom Currency Filter:</strong></p>
+       <ul class="list">
+         <li>{{customfiltersCtrl.page.data.customCurrencyExample | customCurrency}} - Default</li>
+         <li>{{customfiltersCtrl.page.data.customCurrencyExample | customCurrency:'€'}} - Custom Symbol</li>
+         <li>{{customfiltersCtrl.page.data.customCurrencyExample | customCurrency:'€':false}} - Custom Symbol and Custom Location</li>
+       </ul>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
