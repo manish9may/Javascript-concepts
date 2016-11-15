@@ -1,18 +1,17 @@
-var express = require('express'),
+var express = require('../../node_modules/express'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
     session = require('express-session'),
     errorhandler = require('errorhandler'),
     csrf = require('csurf'),
-    //routes = require('./routes'),
+    routes = require('./routes'),
     //services = require('./routes/routes'),
     app = express();
-
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
 app.use(session({
-    secret: 'angular-javascript',
+    secret: 'angular-javascript-practice-target',
     saveUninitialized: true,
     resave: true }));
 app.use(cookieParser());
@@ -35,15 +34,16 @@ app.use(function (req, res, next) {
     var csrf = req.csrfToken();
     res.cookie('XSRF-TOKEN', csrf);
     res.locals._csrf = csrf;
+    console.log(1)
     next();
 });
-
-/*app.get('/', routes.index);
+var csrfProtection = csrf({ cookie: true })
+/*app.get('/',csrfProtection, routes.index);
 var baseUrl = '/api/services';
-app.use(baseUrl , services);*/
-app.get('*', routes.index);
+app.use(baseUrl , services);
+app.get('*',csrfProtection, routes.index);*/
 
 
 app.listen(8085, function () {
-    console.log("Angular Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+    console.log("'Angular JS Practice Target' Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });

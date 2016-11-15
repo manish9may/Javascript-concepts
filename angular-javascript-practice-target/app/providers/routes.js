@@ -69,7 +69,7 @@ angular.module('Portal')
 		controllerAs : 'defaultScopeDirectiveCtrl'*/
 	});
 	$stateProvider.state('modules.isolatedScopeDirective',{
-		url : '/inheritScopeDirective',
+		url : '/isolatedScopeDirective',
 		templateUrl : function($stateParams){
 			return '/view/content/partial/isolatedScopeDirective.html'
 		},
@@ -94,9 +94,9 @@ angular.module('Portal')
 		controllerAs : 'sceServiceCtrl'
 	});
 	$stateProvider.state('modules.portalHttpInterceptor',{
-		url : '/inheritScopeDirective',
+		url : '/portalHttpInterceptor',
 		templateUrl : function($stateParams){
-			return '/view/content/partial/portalHttpInterceptor.html?portalHttpInterceptor=portalHttpInterceptor'
+			return '/view/content/partial/portalHttpInterceptor.html'
 		},
 		controller : 'portalHttpInterceptorController'/*,
 		controllerAs : 'defaultScopeDirectiveCtrl'*/
