@@ -6,12 +6,10 @@ Ext.onReady(function() {
 });
 Ext.application({
 	name : 'Portal',
-	appFolder : 'Layout-Portal/app',
+	appFolder : 'app',
 	autoCreateViewport: true,
 	controllers : [
 					'Portal.controller.MainController',
-					'Portal.controller.HeaderController',
-					'Portal.controller.FooterController',
 					'Portal.controller.AbsoluteExtLayoutController',
 					'Portal.controller.AccordionExtLayoutController',
 					'Portal.controller.AnchorExtLayoutController',
@@ -21,7 +19,8 @@ Ext.application({
 					'Portal.controller.FitExtLayoutController',
 					'Portal.controller.TableExtLayoutController',
 					'Portal.controller.VBoxExtLayoutController',
-					'Portal.controller.HBoxExtLayoutController'
+					'Portal.controller.HBoxExtLayoutController',
+					'Common.controller.CommonExtController'
 					],
 	views : ['Main'],
 	init : function(){

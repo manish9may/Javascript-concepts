@@ -4,6 +4,5 @@ angular.module("Portal")
       	var vm = this;
       	vm.page = {};
       	vm.page.data = {};
-      	vm.page.data.oneAtATime = true;
-    
+      	vm.page.data.pageName = $rootScope.pageName;
  }]);

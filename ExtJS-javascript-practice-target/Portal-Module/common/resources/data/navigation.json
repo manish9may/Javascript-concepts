@@ -1,0 +1,19 @@
+{
+	"expanded" : true,
+    "id"       : "root",
+    "children" : [{
+    		"text"      : "Common Module",
+    		 "expanded"  : true,
+    		 "children" : [{
+	    		 		"id" : "Layout-Portal",
+	    		 		"text" : "Layout Portal",
+	    		 		"leaf" : true,
+                        "href" : "Layout-Portal"
+    		 		},{
+	    		 		"id" : "Component-Portal",
+	    		 		"text" : "Component Portal",
+	    		 		"leaf" : true,
+                        "href" : "Component-Portal"
+    		 		}]
+    	}]
+}

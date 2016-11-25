@@ -13,7 +13,6 @@ Ext.define('Portal.controller.GridExtComponentController',{
         			var gridExtComponent = me.getGridExtComponent();
         			var component = [{
                                         xtype : 'gridExtComponentView',
-                                        height : screen.availHeight - 345,
                                         itemId : 'gridExtComponentView'
                                     }];
         			gridExtComponent.remove(0);

@@ -4,7 +4,7 @@ Ext.define("Portal.view.Main", {
 	layout : {
 		type : 'vbox'
 	},
-	requires : ['Portal.view.header.HeaderView','Portal.view.footer.FooterView','Portal.view.content.ContentView'],
+	requires : ['Common.view.header.HeaderView','Common.view.footer.FooterView','Portal.view.content.ContentView'],
 	items : [{
 				xtype : 'headerView'
 			},{

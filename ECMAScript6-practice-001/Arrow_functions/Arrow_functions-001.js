@@ -4,9 +4,9 @@ const odds = nums.filter(num => num % 2 !== 0);
 
 const evens = nums.filter((num) => {return num % 2 === 0})
 
-console.log2('nums			',nums)
-console.log2('odds			',odds)
-console.log2('evens			',evens)
+console.logger('nums			',nums)
+console.logger('odds			',odds)
+console.logger('evens			',evens)
 
 var adder = {
 	base : 1,
@@ -40,10 +40,10 @@ var adder = {
 
 }
 
-console.log2('adder.add(1)			',adder.add(1));
-console.log2('adder.addThruCall(2)			',adder.addThruCall(2));
-console.log2('adder.addThruArg(3)			',adder.addThruArg(3));
-console.log2('adder.addThruArg(4)			',adder.addThruArg(4));
+console.logger('adder.add(1)			',adder.add(1));
+console.logger('adder.addThruCall(2)			',adder.addThruCall(2));
+console.logger('adder.addThruArg(3)			',adder.addThruArg(3));
+console.logger('adder.addThruArg(4)			',adder.addThruArg(4));
 
 var param = 'size';
 var config1 = {
@@ -51,6 +51,6 @@ var config1 = {
   ["mobile" + param.charAt(0).toUpperCase() + param.slice(1)]: 4
 };
 
-console.log2('config1			',config1); 
+console.logger('config1			',config1); 
 
 

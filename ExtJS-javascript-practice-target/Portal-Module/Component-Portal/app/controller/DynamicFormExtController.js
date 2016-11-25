@@ -13,8 +13,6 @@ Ext.define('Portal.controller.DynamicFormExtController',{
         				var dynamicFormExtComponent = me.getDynamicFormExtComponent();
         				var component = [{
                                                 xtype : 'dynamicFormExtComponentView',
-                                                //height : screen.availHeight - 260,
-                                                height : screen.availHeight - 345,
                                                 itemId : 'dynamicFormExtComponentView'
                                         }];
         				dynamicFormExtComponent.remove(0);

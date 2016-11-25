@@ -4,7 +4,7 @@
     }
     var old = console.log;
     var logger = document.getElementById('log');
-    console.log2 = function () {
+    console.logger = function () {
         var args = Array.prototype.splice.call(arguments,0);
         var messages = args;
         for(var i = 0;i < messages.length;i++){

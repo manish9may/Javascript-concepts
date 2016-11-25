@@ -7,11 +7,12 @@ Ext.onReady(function() {
 });
 Ext.application({
 	name : 'Portal',
-	appFolder : 'Component-Portal/app',
+	appFolder : 'app',
 	requires : ['Portal.store.GridExtComponentStore'],
 	autoCreateViewport: true,
 	controllers : ['GridExtComponentController',
-				   'DynamicFormExtController'],
+				   'DynamicFormExtController',
+				   'Common.controller.CommonExtController'],
 	views : ['Main'],
 	init : function(){
 		this.setDefaultToken('component-portal');

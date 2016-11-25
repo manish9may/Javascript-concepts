@@ -98,8 +98,8 @@ angular.module('Portal')
 		templateUrl : function($stateParams){
 			return '/view/content/partial/portalHttpInterceptor.html'
 		},
-		controller : 'portalHttpInterceptorController'/*,
-		controllerAs : 'defaultScopeDirectiveCtrl'*/
+		controller : 'portalHttpInterceptorController',
+		controllerAs : 'portalHttpInterceptorCtrl'
 	});
 	//$urlRouterProvider.otherwise('/components/accordion');
 	this.$get = function(){
