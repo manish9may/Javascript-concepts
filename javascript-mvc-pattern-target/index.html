@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<base href="/">
+	 	<meta charset="utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	    <title>Javascript MVC Target</title>
+	    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css' />
+	    <link rel="stylesheet" type="text/css" href="lib/components/bootstrap/css/bootstrap.css"/>
+	</head>
+	<body>
+    	<div class="row container">
+            <div class="col-xs-4">
+                <select id="list" class="form-control" size="10"></select>
+            </div>
+            <div class="col-md-2 col-sm-2">
+                <button id="plusBtn" class="btn btn-default btn-block">+</button>
+                <button id="minusBtn" class="btn btn-default btn-block">-</button>
+            </div>
+        </div>
+
+        <script type="text/javascript" src = "lib/jquery.js"></script>
+        <script type="text/javascript" src = "scripts/eventDispatcher.js"></script>
+        <script type="text/javascript" src = "scripts/listModel.js"></script>
+        <script type="text/javascript" src = "scripts/listView.js"></script>
+        <!--<script type="text/javascript" src = "scripts/taskView.js"></script>
+        <script type="text/javascript" src = "scripts/taskController.js"></script>-->
+        <script type="text/javascript" src = "scripts/app.js"></script>
+	</body>
+</html>
+

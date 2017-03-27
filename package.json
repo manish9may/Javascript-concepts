@@ -3,21 +3,30 @@
   "version": "0.0.0",
   "dependencies": {
     "grunt-yui-compressor": "^0.4.0",
-    "@angular/common": "2.2.0",
-    "@angular/compiler": "2.2.0",
-    "@angular/core": "2.2.0",
-    "@angular/forms": "2.2.0",
-    "@angular/http": "2.2.0",
-    "@angular/platform-browser": "2.2.0",
-    "@angular/platform-browser-dynamic": "2.2.0",
-    "@angular/router": "3.2.0",
-    "@angular/upgrade": "2.2.0",
-    "systemjs": "0.19.40",
-    "core-js": "^2.4.1",
-    "reflect-metadata": "^0.1.8",
-    "rxjs": "5.0.0-beta.12",
-    "zone.js": "^0.6.26"
+    "@angular/common": "2.0.0-rc.5",
+    "@angular/compiler": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "@angular/forms": "0.3.0",
+    "@angular/http": "2.0.0-rc.5",
+    "@angular/platform-browser": "2.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.5",
+    "@angular/router": "3.0.0-rc.1",
+    "@angular/upgrade": "2.0.0-rc.5",
+    "bootstrap": "^3.3.6",
+    "core-js": "^2.4.0",
+    "ng2-uploader": "^0.5.10",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "systemjs": "0.19.27",
+    "zone.js": "^0.6.12"
   },
+  "scripts" : {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "lite": "lite-server",
+    "tsc": "tsc",
+    "tsc:w": "tsc --p \"angular2-typescript-practice-target\" -w",
+    "test": "grunt test"
+    },
   "devDependencies": {
     "bower": "^1.3",
     "grunt": "^0.4.5",
@@ -71,17 +80,16 @@
     "multiparty" : "4.1.2",
     "multer" : "1.1.0",
     "grunt-include-source" : "1.0.0",
-    "concurrently": "^3.1.0",
-    "typescript": "2.0.8",
     "opn": "^4.0.2",
-    "lite-server": "^2.2.2",
+    "systemjs-builder": "^0.15.16",
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.2.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4",
     "@types/core-js": "^0.9.34",
     "@types/node": "^6.0.46"
   },
   "engines": {
     "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "grunt test"
   }
 }

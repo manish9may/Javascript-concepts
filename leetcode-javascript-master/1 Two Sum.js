@@ -24,3 +24,6 @@ var twoSum = function(nums, target) {
     
     return [];
 };
+
+
+console.log('twoSum([4,1,3,5,8,6],9)     ',twoSum([4,2,3,5,8,6],10));

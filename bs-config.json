@@ -1,0 +1,10 @@
+{
+  "port": 8000,
+  "server": { 
+  	"baseDir": ["./angular2-typescript-practice-target"],
+  	"files" : ["./angular2-typescript-practice-target/**/*.{html,htm,css,js}"],
+  	"routes" : {
+  		"/node_modules" : "node_modules"
+  	}
+   }
+}

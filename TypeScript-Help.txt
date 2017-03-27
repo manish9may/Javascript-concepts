@@ -1,0 +1,3 @@
+https://medium.com/@menezes.carlos/angular-2-setting-up-your-working-environment-52b985d1d341#.mghryxkrk
+
+https://github.com/Microsoft/TypeScript-Sublime-Plugin

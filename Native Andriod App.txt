@@ -1,0 +1,3 @@
+Download Eclipse for Java.
+Install CDT from Eclipse update site http://download.eclipse.org/tools/cdt/releases/indigo.
+Install Android SDK + NDK Plugins from Eclipse update site https://dl-ssl.google.com/android/eclipse/ 
