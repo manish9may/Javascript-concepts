@@ -14,4 +14,5 @@ var binaryIndexOf = function(items,searchElement){
 	return null
 }
 
-console.log('binaryIndexOf(3)			',binaryIndexOf([2,7,5,1,34,3],3))
+
+console.log('binaryIndexOf(3)			',binaryIndexOf([2,2,5,1,34,4],3))

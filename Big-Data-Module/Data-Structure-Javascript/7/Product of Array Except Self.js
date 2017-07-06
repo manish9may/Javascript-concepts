@@ -13,5 +13,4 @@ var productExceptSelf = function(nums) {
 	}
 	return result;
 }
-
 console.log('productExceptSelf(['+1,2,3,4+'])         ',productExceptSelf([1,2,3,4]))
