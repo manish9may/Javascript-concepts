@@ -1,0 +1,42 @@
+<div class="row form-row offsetB20 offsetT20">
+	<div class="col-md-5 col-sm-5 pull-right">
+    	<label>Search By</label>
+    	<input type="text" class="form-control" placeholder="Search" ng-model = 'config.data.search'/>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12 col-sm-12">
+			<table class="table table-hover table-responsive">
+			  <thead>
+			    <tr>
+			      <th ng-repeat = "col in options.columns" ng-click = "sortHeaderClicked(col,$index)">{{col.name}}</th>
+			      <th>Actions{{customDataCtrl.currentPage}}</th>
+			    </tr>
+			    <tbody>
+    			<tr ng-repeat-start = "row in config.data.ItemsByPage[config.data.currentPage] | userSearch : config.data.search : options.columns : config.data.selectedEditProcess" ng-init = "rowIndex = $index;" id = "rowIndex_{{rowIndex}}" ng-show = '!row.isEdit'>
+    				<td ng-repeat = "col in options.columns" ng-bind-html = "getBindResult(row[col.binding],col.mRender,rowIndex,row)" ng-bind-html-compile></td>
+    				<td><a ng-click = "edit(rowIndex,row)" ng-if = "!config.data.selectedEditProcess"><i class="fa fa-pencil-square-o"></i></a></td>
+    			</tr>
+    			<tr ng-repeat-end = "row in config.data.ItemsByPage[config.data.currentPage] | userSearch : config.data.search : options.columns : config.data.selectedEditProcess" ng-init = "rowIndex = $index;" id = "rowIndex_{{rowIndex}}" ng-show = 'row.isEdit'>
+    				<td ng-repeat = "col in options.columns"><input type="text" class="form-control" ng-model = 'config.data.editInfo[rowIndex][col.binding]' ng-required = "true" ng-init = "config.data.editInfo[rowIndex][col.binding] = row[col.binding]"/></td>
+    				<td>
+    				<a ng-click = "cancel(rowIndex,row)" ng-if = "config.data.selectedEditProcess"><i class="fa fa-times"></i></a>
+    				<a ng-click = "success(rowIndex,row)" ng-if = "config.data.selectedEditProcess"><i class="fa fa-check-circle"></i></a></td>
+    			</tr>
+    			</tbody>
+			  </thead>
+			</table>
+	</div>
+</div>
+<div class="row form-row offsetB20 offsetT20">
+	<div class="col-md-5 col-sm-5 pull-right">
+		<ul class="pagination pagination-sm pull-right">
+		   <li><a href="javascript:void(0);" ng-click="firstPage()">First</a>
+		   </li>
+		   <li ng-repeat="n in range(config.data.ItemsByPage.length)" ng-class="{active:config.data.currentPage == n}"> <a href="javascript:void(0);" ng-click="setPage()" ng-bind="n+1">1</a>
+		   </li>
+		   <li><a href="javascript:void(0);" ng-click="lastPage()">Last</a>
+		   </li>
+		</ul>
+	</div>
+</div>
