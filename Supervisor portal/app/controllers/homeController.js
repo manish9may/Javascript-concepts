@@ -5,7 +5,16 @@ angular.module('supervisorApp')
 	vm.page = {}
 	vm.page.data = {};
 	vm.page.data.supervisorName = 'John';
-	vm.page.data.workers = workersJson.workers;
+	function modifyList(list){
+
+		return list.map((data,index)=>{
+			if(data.taskAssigned){
+				data.startTime = new Date().getTime(); 
+			}
+			return data;
+		});
+	}
+	vm.page.data.workers = modifyList(workersJson.workers);
 	vm.page.data.selectedIndex = -1;
 	var resetInfo = function(){
 		vm.page.data.taskName = undefined;
@@ -26,7 +35,24 @@ angular.module('supervisorApp')
 		resetInfo();
 
 	}	
+	ringWorker.postMessage({workers : vm.page.data.workers,cmd : "task"});
+	ringWorker.addEventListener('message',function(e){
+	var data = e.data;
+	switch (data.cmd) {
+		case "ringTheBell" :
+			
+		break;
+		case "task" :
+			var workers = data.workers;
+			$scope.$apply(function(){
+				vm.page.data.workers = workers;
+			});
+		break;
+
+	}
+	
+},false);
 	vm.ringTheBell = function(){ 
-		ringWorker.postMessage(vm.page.data.workers);
+		ringWorker.postMessage({workers : vm.page.data.workers,cmd : "ringTheBell"});
 	}
 }])
